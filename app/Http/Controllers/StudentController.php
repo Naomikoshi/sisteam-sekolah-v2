@@ -26,7 +26,7 @@ class StudentController extends Controller
         return"Edit Akun Siswa ID: {$id}";
     }
 
-    public function store()
+    public function store(Request $request)
     {
         return"Edit Siswa";
     }
