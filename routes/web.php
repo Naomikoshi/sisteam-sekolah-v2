@@ -17,52 +17,52 @@ Route::get('/', function () {
 });
 
 //Manajemen data siswa (Action Controller)
-Route::name('students.')->prefix('students') ->group(function() {
-// Halaman daftar siswa
-Route::get('/', [StudentController::class, 'index'])->name('index');
+Route::name('students.')->prefix('students')->group(function () {
+    // Halaman daftar siswa
+    Route::get('/', [StudentController::class, 'index'])->name('index');
 
-// Halaman detail siswa
-Route::get('/{id}', [StudentController::class, 'show'])->name('show');
+    // Halaman detail siswa
+    Route::get('/{id}', [StudentController::class, 'show'])->name('show');
 
-//Halaman tambah siswa
-Route::get('/create', [StudentController::class, 'create'])->name('create');
+    //Halaman tambah siswa
+    Route::get('/create', [StudentController::class, 'create'])->name('create');
 
-//Halaman edit siswa
-Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
+    //Halaman edit siswa
+    Route::get('/{id}/edit', [StudentController::class, 'edit'])->name('edit');
 
-//Logic add student
-Route::post('/', [StudentController::class, 'store'])->name('store');
+    //Logic add student
+    Route::post('/', [StudentController::class, 'store'])->name('store');
 
-//Logic edit student
-Route::put('/{id}', [StudentController::class, 'update'])->name('update');
+    //Logic edit student
+    Route::put('/{id}', [StudentController::class, 'update'])->name('update');
 
-//Logic delete student
-Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
+    //Logic delete student
+    Route::delete('/{id}', [StudentController::class, 'destroy'])->name('destroy');
 
 });
 
 //Manajemen data guru (Action Controller)
-Route::name('teachers.')->prefix('teachers') ->group(function() {
-//Halaman daftar guru
-Route::get('/', [TeacherController::class, 'index'])->name('index');
+Route::name('teachers.')->prefix('teachers')->group(function () {
+    //Halaman daftar guru
+    Route::get('/', [TeacherController::class, 'index'])->name('index');
 
-//Halaman detail guru
-Route::get('/{id}', [TeacherController::class, 'show'])->name('show');
+    //Halaman detail guru
+    Route::get('/{id}', [TeacherController::class, 'show'])->name('show');
 
-//Halaman tambah guru
-Route::get('/create', [TeacherController::class, 'create'])->name('create');
+    //Halaman tambah guru
+    Route::get('/create', [TeacherController::class, 'create'])->name('create');
 
-//Halaman edit guru
-Route::get('/{id}/edit', [TeacherController::class, 'edit'])->name('edit');
+    //Halaman edit guru
+    Route::get('/{id}/edit', [TeacherController::class, 'edit'])->name('edit');
 
-//Logic add teacher
-Route::post('/', [TeacherController::class, 'store'])->name('store');
+    //Logic add teacher
+    Route::post('/', [TeacherController::class, 'store'])->name('store');
 
-//Logic edit teacher
-Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
+    //Logic edit teacher
+    Route::put('/{id}', [TeacherController::class, 'update'])->name('update');
 
-//Logic delete teacher
-Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
+    //Logic delete teacher
+    Route::delete('/{id}', [TeacherController::class, 'destroy'])->name('destroy');
 
 });
 
