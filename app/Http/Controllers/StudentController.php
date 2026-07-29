@@ -7,19 +7,19 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
     public function index() {
-        return "Ini adalah halaman daftar siswa";
+        return view('students.index');
     }
 
     public function show(string $id) {
-        return "Menampilkan detail siswa dengan id : {$id}";
+        return view('students.show');
     }
 
     public function create() {
-        return "ini adalah halaman tambah siswa";
+        return view('students.create');
     }
 
     public function edit(string $id) {
-        return "ini adalah halaman edit siswa dengan id : {$id}";
+        return view('students.edit');
     }
 
     public function store () {
