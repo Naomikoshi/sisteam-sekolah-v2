@@ -8,22 +8,24 @@ class StudentController extends Controller
 {
     public function index()
     {
-        return"Halaman Daftar Siswa";
+        $title = "Dsadhabdhabdjabdwhabdajwbdhajwbdwhabdhawbdawhbdahwbhawbvgahbjnkjkbhvguhibnojkhvguygijnkbhvguygihbjhgvuygyvugvh vvgvyvgh vvgh vuyuvghvuyvgvv hguvughvuyvgvuygyuvata Siswa";
+
+        return view ('Students.index');
     }
 
     public function show(string $id)
     {
-        return"Detail Siswa ID:{$id}";
+        return view ('Students.show');
     }
 
     public function create()
     {
-        return"Buat Akun Siswa";
+        return view ('Students.create');
     }
 
     public function edit(string $id)
     {
-        return"Edit Akun Siswa ID: {$id}";
+        return view ('Students.edit');
     }
 
     public function store(Request $request)
