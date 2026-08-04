@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buku Induk Siswa - Sistem Sekolah</title>
+    <title>{{ $title }}</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -56,12 +56,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
-                        <td class="px-5 py-4 font-display text-lg text-[#A16207]">1</td>
-                        <td class="px-5 py-4 font-mono text-xs text-slate-500">2024001</td>
-                        <td class="px-5 py-4 font-medium text-[#16213A]">Budi Ariyanto</td>
-                        <td class="px-5 py-4">XII AKL 1</td>
-                        <td class="px-5 py-4">RPL</td>
+                    @foreach ( $students as $student )
+                        <tr class="border-b border-[#EFEDE6] hover:bg-[#FAF9F5]">
+                        <td class="px-5 py-4 font-display text-lg text-[#A16207]">
+                            {{ $loop->iteration }}
+                        </td>
+                        <td class="px-5 py-4 font-mono text-xs text-slate-500">
+                            {{ $students['nis'] }}
+                        </td>
+                        <td class="px-5 py-4 font-medium text-[#16213A]">
+                            {{ $students['name'] }}
+                        </td>
+                        <td class="px-5 py-4">
+                            {{ $students['class'] }}
+                        </td>
+                        <td class="px-5 py-4">
+                            {{ $students['major'] }}
+                        </td>
                         <td class="px-5 py-4">
                             <div class="flex justify-end gap-4 text-xs font-medium">
                                 <a href="" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>
@@ -74,6 +85,8 @@
                             </div>
                         </td>
                     </tr>
+                    @endforeach
+                    
                 </tbody>
             </table>
         </div>
