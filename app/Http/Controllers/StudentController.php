@@ -41,7 +41,7 @@ class StudentController extends Controller
         ];
 
 
-        return view ('Students.index', [
+        return view ('students.index', [
             'title' => $title,
             'students' => $students
         ]);
@@ -49,17 +49,20 @@ class StudentController extends Controller
 
     public function show(string $id)
     {
-        return view ('Students.show');
+        $title = 'Sistem Sekolah - Detail Siswa';
+        return view ('students.show',[
+            'title' => $title
+        ]);
     }
 
     public function create()
     {
-        return view ('Students.create');
+        return view ('students.create');
     }
 
     public function edit(string $id)
     {
-        return view ('Students.edit');
+        return view ('students.edit');
     }
 
     public function store(Request $request)
