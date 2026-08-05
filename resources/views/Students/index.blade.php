@@ -62,16 +62,16 @@
                             {{ $loop->iteration }}
                         </td>
                         <td class="px-5 py-4 font-mono text-xs text-slate-500">
-                            {{ $students['nis'] }}
+                            {{ $student['nis'] }}
                         </td>
                         <td class="px-5 py-4 font-medium text-[#16213A]">
-                            {{ $students['name'] }}
+                            {{ $student['name'] }}
                         </td>
                         <td class="px-5 py-4">
-                            {{ $students['class'] }}
+                            {{ $student['class'] }}
                         </td>
                         <td class="px-5 py-4">
-                            {{ $students['major'] }}
+                            {{ $student['major'] }}
                         </td>
                         <td class="px-5 py-4">
                             <div class="flex justify-end gap-4 text-xs font-medium">

@@ -9,34 +9,35 @@ class StudentController extends Controller
     public function index()
     {
         $title = "Daftar Siswa";
-        $students = 
-        [
-            'id' => 1,
-            'nis' => 000001,
-            'name' => "John Doe",
-            'class' => '12 TKJ 3',
-            'major' => 'Teknik Komputer dan Jaringan',
-        ];
-        [
-            'id' => 2,
-            'nis' => 000002,
-            'name' => "John Does",
-            'class' => '12 TKJ 3',
-            'major' => 'Teknik Komputer dan Jaringan',
-        ];
-        [
-            'id' => 3,
-            'nis' => 000003,
-            'name' => "John Doed",
-            'class' => '12 TKJ 3',
-            'major' => 'Teknik Komputer dan Jaringan',
-        ];
-        [
-            'id' => 4,
-            'nis' => 000004 ,
-            'name' => "John Doeng",
-            'class' => '12 TKJ 3',
-            'major' => 'Teknik Komputer dan Jaringan',
+        $students = [
+            [
+                'id' => 1,
+                'nis' => '000001',
+                'name' => "John Doe",
+                'class' => '12 TKJ 3',
+                'major' => 'Teknik Komputer dan Jaringan',
+            ],
+            [
+                'id' => 2,
+                'nis' => '000002',
+                'name' => "John Does",
+                'class' => '12 TKJ 3',
+                'major' => 'Teknik Komputer dan Jaringan',
+            ],
+            [
+                'id' => 3,
+                'nis' => '000003',
+                'name' => "John Doed",
+                'class' => '12 TKJ 3',
+                'major' => 'Teknik Komputer dan Jaringan',
+            ],
+            [
+                'id' => 4,
+                'nis' => '000004',
+                'name' => "John Doeng",
+                'class' => '12 TKJ 3',
+                'major' => 'Teknik Komputer dan Jaringan',
+            ],
         ];
 
 
