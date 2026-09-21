@@ -33,8 +33,8 @@
                 <td class="px-5 py-4 font-mono text-xs text-slate-500">{{ $teacher['nip'] }}</td>
                 <td class="px-5 py-4 font-medium text-[#16213A]">{{ $teacher['name'] }}</td>
                 <td class="px-5 py-4">{{ $teacher['subject'] }}</td>
-                <td class="px-5 py-4">{{ $teacher['phone'] }}</td>
-                <td class="px-5 py-4">{{ $teacher['status'] }}</td>
+                <td class="px-5 py-4">{{ $teacher['phone_number'] }}</td>
+                <td class="px-5 py-4"><x-status-badge :status="$teacher['status']" /></td>
                 <td class="px-5 py-4">
                     <div class="flex justify-end gap-4 text-xs font-medium">
                         <a href="{{ route('teachers.show', $teacher['id']) }}" class="text-[#16213A] hover:text-[#A16207]">Lihat</a>

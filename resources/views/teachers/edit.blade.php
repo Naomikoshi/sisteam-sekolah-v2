@@ -37,8 +37,17 @@
     </div>
 
     <div>
-        <label for="phone" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Telepon</label>
-        <input type="text" id="phone" name="phone" value="{{ $teacher['phone'] }}" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+        <label for="phone_number" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">No. Telepon</label>
+        <input type="text" id="phone_number" name="phone_number" value="{{ $teacher['phone_number'] }}" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+    </div>
+
+    <div>
+        <label for="status" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Status</label>
+        <select id="status" name="status" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+            @foreach ($statuses as $status)
+                <option value="{{ $status }}" {{ $teacher['status'] === $status ? 'selected' : '' }}>{{ $status }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div class="flex justify-end gap-4 border-t border-[#EFEDE6] pt-6">

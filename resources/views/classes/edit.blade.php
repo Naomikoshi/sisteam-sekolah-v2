@@ -20,17 +20,29 @@
 
     <div>
         <label for="grade" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Tingkat</label>
-        <input type="text" id="grade" name="grade" value="{{ $schoolClass['grade'] }}" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+        <select id="grade" name="grade" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+            @foreach (['X', 'XI', 'XII'] as $grade)
+                <option value="{{ $grade }}" {{ $schoolClass['grade'] === $grade ? 'selected' : '' }}>{{ $grade }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div>
-        <label for="major" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
-        <input type="text" id="major" name="major" value="{{ $schoolClass['major'] }}" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+        <label for="major_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Jurusan</label>
+        <select id="major_id" name="major_id" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+            @foreach ($majors as $major)
+                <option value="{{ $major['id'] }}" {{ $schoolClass['major_id'] == $major['id'] ? 'selected' : '' }}>{{ $major['name'] }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div>
-        <label for="homeroom_teacher" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali Kelas</label>
-        <input type="text" id="homeroom_teacher" name="homeroom_teacher" value="{{ $schoolClass['homeroom_teacher'] }}" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+        <label for="teacher_id" class="mb-1.5 block text-xs font-semibold uppercase tracking-[0.1em] text-[#16213A]">Wali Kelas</label>
+        <select id="teacher_id" name="teacher_id" class="w-full border border-[#D9D6CD] bg-[#FCFBF8] px-3.5 py-2.5 text-sm focus:border-[#A16207] focus:bg-white focus:outline-none">
+            @foreach ($teachers as $teacher)
+                <option value="{{ $teacher['id'] }}" {{ $schoolClass['teacher_id'] == $teacher['id'] ? 'selected' : '' }}>{{ $teacher['name'] }}</option>
+            @endforeach
+        </select>
     </div>
 
     <div class="flex justify-end gap-4 border-t border-[#EFEDE6] pt-6">

@@ -15,7 +15,7 @@ class TeacherController extends Controller
                 'name' => 'Budi Santoso',
                 'gender' => 'Laki-Laki',
                 'subject' => 'Akuntansi Dasar',
-                'phone' => '081234560001',
+                'phone_number' => '081234560001',
                 'status' => 'Aktif',
             ],
             [
@@ -24,7 +24,7 @@ class TeacherController extends Controller
                 'name' => 'Siti Aminah',
                 'gender' => 'Perempuan',
                 'subject' => 'Jaringan Komputer',
-                'phone' => '081234560002',
+                'phone_number' => '081234560002',
                 'status' => 'Aktif',
             ],
         ];
@@ -57,6 +57,7 @@ class TeacherController extends Controller
 
         return view('teachers.create', [
             'title' => $title,
+            'statuses' => ['Aktif', 'Tidak Aktif'],
         ]);
     }
 
@@ -68,6 +69,7 @@ class TeacherController extends Controller
         return view('teachers.edit', [
             'title' => $title,
             'teacher' => $teacher,
+            'statuses' => ['Aktif', 'Tidak Aktif'],
         ]);
     }
 
